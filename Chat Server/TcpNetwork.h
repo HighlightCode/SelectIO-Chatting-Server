@@ -43,7 +43,7 @@ namespace ServerNetLib
 
 		int CreateSessionPool(const int maxClientCount);
 		NET_ERROR_CODE NewSession();
-		void SetSockOption(const SOCKET fd);
+		void SetSockOption(const SOCKET fd); // set RCV_BUF, SNF_BUF size 
 		void ConnectedSession(const int sessionIndex, const SOCKET fd, const char* pIP);
 
 		void CloseSession(const SOCKET_CLOSE_CASE closeCase, const SOCKET sockFD, const int sessionIndex);
@@ -70,8 +70,8 @@ namespace ServerNetLib
 
 		int64_t m_ConnectSeq = 0;
 
-		std::vector<ClientSession> m_ClientSessionPool;
-		std::deque<int> m_ClientSessionPoolIndex;
+		std::vector<ClientSession> m_ClientSessionPool; // manage ClientSession
+		std::deque<int> m_ClientSessionPoolIndex; // manage ClientSession Pool Index
 
 		std::deque<RecvPacketInfo> m_PacketQueue;
 

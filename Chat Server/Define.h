@@ -29,7 +29,7 @@ namespace ServerNetLib
 	};
 
 	const int MAX_IP_LEN = 32; // maximum length of IP add
-	const int MAX_PACKET_BODY_SIZE; // maximum packet size
+	const int MAX_PACKET_BODY_SIZE = 1024; // maximum packet size
 
 
 	/*---------------------
@@ -79,4 +79,19 @@ namespace ServerNetLib
 		SOCKET_SEND_ERROR = 5,
 		FORCING_CLOSE = 6,
 	};
+
+#pragma pack(push, 1)
+	struct PacketHeader
+	{
+		short Id;
+		short BodySize;
+	};
+
+	const int PACKET_HEADER_SIZE = sizeof(PacketHeader);
+
+	struct PktNtfSysCloseSession : PacketHeader
+	{
+		int SockFD;
+	};
+#pragma pack(pop)
 }
