@@ -80,6 +80,13 @@ namespace ServerNetLib
 		FORCING_CLOSE = 6,
 	};
 
+	enum class PACKET_ID : short
+	{
+		NTF_SYS_CONNECT_SESSION = 2,
+		NTF_SYS_CLOSE_SESSION = 3,
+
+	};
+
 #pragma pack(push, 1)
 	struct PacketHeader
 	{

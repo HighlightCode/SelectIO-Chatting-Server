@@ -1,7 +1,10 @@
 #pragma once
 
-#include <WinSock2.h>
-#include <WS2tcpip.h>
+#define FD_SETSIZE 5096
+
+#pragma comment(lib, "ws2_32")
+#include <winsock2.h>
+#include <ws2tcpip.h>
 
 #include <vector>
 #include <deque>
@@ -19,20 +22,20 @@ namespace ServerNetLib
 		TcpNetwork();
 		virtual ~TcpNetwork();
 
-		// initialize TcpNetwork
 		NET_ERROR_CODE Init(const ServerConfig* pConfig, ILog* pLogger) override;
 
-		void Release() override;
+		NET_ERROR_CODE SendData(const int sessionIndex, const short packetId, const short size, const char* pMsg) override;
 
-		NET_ERROR_CODE SendData(const int SessionIdx, const short packetId, const short size, const char* pMsg) override;
+		void Run() override;
 
 		RecvPacketInfo GetPacketInfo() override;
+
+		void Release() override;
 
 		int ClientSessionPoolSize() override { return (int)m_ClientSessionPool.size(); }
 
 		void ForcingClose(const int sessionIndex);
 
-		void Run() override;
 
 	protected:
 		NET_ERROR_CODE InitServerSocket();
@@ -43,7 +46,7 @@ namespace ServerNetLib
 
 		int CreateSessionPool(const int maxClientCount);
 		NET_ERROR_CODE NewSession();
-		void SetSockOption(const SOCKET fd); // set RCV_BUF, SNF_BUF size 
+		void SetSockOption(const SOCKET fd);
 		void ConnectedSession(const int sessionIndex, const SOCKET fd, const char* pIP);
 
 		void CloseSession(const SOCKET_CLOSE_CASE closeCase, const SOCKET sockFD, const int sessionIndex);
@@ -70,8 +73,8 @@ namespace ServerNetLib
 
 		int64_t m_ConnectSeq = 0;
 
-		std::vector<ClientSession> m_ClientSessionPool; // manage ClientSession
-		std::deque<int> m_ClientSessionPoolIndex; // manage ClientSession Pool Index
+		std::vector<ClientSession> m_ClientSessionPool;
+		std::deque<int> m_ClientSessionPoolIndex;
 
 		std::deque<RecvPacketInfo> m_PacketQueue;
 
