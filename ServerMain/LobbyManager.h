@@ -48,8 +48,6 @@ public:
 
 
 
-
-
 private:
 	ILog* m_pRefLogger;
 	TcpNet* m_pRefNetwork;
