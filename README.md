@@ -31,10 +31,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
+Using Socket API, build the server and multi  Chat Program. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -52,20 +49,19 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 User Demo for Client and Server 
 <pre>
 Client <-> SELECT SERVER <-> Client
-  ∟            ∟             ∟
-  戌式式式式式式式式式式式式式式
-       Data Packet Send / Recv
+  |-- Data Packet Send / Recv --|
 </pre>
 
-### Client 
+### Client Explanation
 1. Client uses Nana GUI to make ...
-2. ----
-3. ----
 
-- Client UML
-<img src="images/Client.jpg" alt="Logo" width="350" height="350">
+### Client UML
+<img src="images/Client.jpg" alt="Logo" width="600" height="350">
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+### Client GUI
+<img src="images/ClientGUI.jpg" alt="Logo" width="600" height="350">
+
+<p align="center">(<a href="#top">back to top</a>)</p>
 
 
 <!-- TODO -->
