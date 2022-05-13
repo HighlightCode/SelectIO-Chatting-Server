@@ -2,6 +2,7 @@
 
 #include "TcpNetwork.h"
 #include "IClientScreen.h"
+#include <iostream>
 
 
 class ClientSceenLogIn : public IClientSceen
@@ -41,7 +42,7 @@ public:
 		m_lbl3 = std::make_shared<label>((form&)*m_pForm, nana::rectangle(22, 58, 18, 18));
 		m_lbl3->caption("ID:");
 		m_IDtxt = std::make_shared<textbox>((form&)*m_pForm, nana::rectangle(43, 56, 115, 20));
-		m_IDtxt->caption("jacking");
+		m_IDtxt->caption("Sangin");
 
 		m_lbl4 = std::make_shared<label>((form&)*m_pForm, nana::rectangle(170, 58, 69, 18));
 		m_lbl4->caption("PassWord:");
@@ -50,6 +51,9 @@ public:
 
 		m_Loginbtn = std::make_shared<button>((form&)*m_pForm, nana::rectangle(353, 54, 102, 23));
 		m_Loginbtn->caption("Login");
+		m_ptxtCurState = std::make_shared<textbox>((form&)*m_pForm, nana::rectangle(450, 15, 120, 20));
+		m_ptxtCurState->caption("State: Disconnect");
+
 		m_Loginbtn->events().click([&]() {
 			this->LogInOut();
 			});
@@ -64,18 +68,21 @@ public:
 		case (short)PACKET_ID::LOGIN_IN_RES:
 		{
 			m_Loginbtn->enabled(true);
-
+			nana::msgbox m((form&)*m_pForm, "LOGIN MESSAGE", nana::msgbox::ok);
+			m.icon(m.icon_warning);
 			auto pktRes = (NCommon::PktLogInRes*)pData;
 
 			if (pktRes->ErrorCode == (short)NCommon::ERROR_CODE::NONE)
 			{
 				m_Loginbtn->caption("LogOut");
 				SetCurSceenType(CLIENT_SCEEN_TYPE::LOGIN);
+				m << "Login Successed  !";
+				m.show();
 			}
 			else
 			{
-				nana::msgbox m((form&)*m_pForm, "Fail LOGIN_IN_REQ", nana::msgbox::ok);
-				m.icon(m.icon_warning);
+				//nana::msgbox m((form&)*m_pForm, "Fail LOGIN_IN_REQ", nana::msgbox::ok);
+				//m.icon(m.icon_warning);
 				m << "ErrorCode: " << pktRes->ErrorCode;
 				m.show();
 			}
@@ -101,6 +108,7 @@ private:
 			if (m_pRefNetwork->ConnectTo(szIP, (unsigned short)m_Porttxt->to_int()))
 			{
 				m_Connectbtn->caption("DisConnect");
+				m_ptxtCurState->caption("State: Connect");
 				m_Loginbtn->enabled(true);
 			}
 			else
@@ -110,6 +118,7 @@ private:
 				m.show();
 
 				m_Loginbtn->enabled(false);
+				m_ptxtCurState->caption("State: DisConnect");
 			}
 		}
 		else
@@ -160,7 +169,7 @@ private:
 	std::shared_ptr<textbox> m_Porttxt;
 
 	std::shared_ptr<button> m_Connectbtn;
-
+	std::shared_ptr<textbox> m_ptxtCurState;
 
 	std::shared_ptr<label> m_lbl3;
 	std::shared_ptr<textbox> m_IDtxt;

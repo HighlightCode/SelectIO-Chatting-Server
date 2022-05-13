@@ -20,7 +20,7 @@ namespace ServerNetLib
 		short MaxClientRecvBufferSize;
 		short MaxClientSendBufferSize;
 
-		bool isLoginCheck;
+		bool IsLoginCheck;
 
 		int MaxLobbyCount;
 		int MaxLobbyUserCount;

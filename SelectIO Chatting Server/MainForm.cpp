@@ -46,9 +46,6 @@ void MainForm::CreateGUI()
 	m_pClientSceenLobby->CreateUI(m_fm.get());
 
 
-	m_ptxtCurState = std::make_unique<textbox>((form&)*m_fm.get(), nana::rectangle(450, 15, 120, 20));
-	m_ptxtCurState->caption("State: Disconnect");
-
 	m_RoomUserList = std::make_shared<listbox>((form&)*m_fm.get(), nana::rectangle(22, 522, 120, 166));
 	m_RoomUserList->append_header("UserID", 90);
 

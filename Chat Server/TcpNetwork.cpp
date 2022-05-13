@@ -219,9 +219,8 @@ namespace ServerNetLib
 
 	NET_ERROR_CODE TcpNetwork::InitServerSocket()
 	{
-		WORD wVersionRequested = MAKEWORD(2, 2);
 		WSADATA wsaData;
-		WSAStartup(wVersionRequested, &wsaData);
+		WSAStartup(MAKEWORD(2, 2), &wsaData);
 
 		m_ServerSockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 		if (m_ServerSockfd < 0)

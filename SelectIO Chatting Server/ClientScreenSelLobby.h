@@ -35,8 +35,8 @@ public:
 
 		m_LobbyList = std::make_unique<listbox>((form&)*m_pForm, nana::rectangle(22, 106, 165, 383));
 		m_LobbyList->append_header("LobbyId", 60);//L"·ÎºñID"
-		m_LobbyList->append_header("Cur", 40);
-		m_LobbyList->append_header("Max", 40);
+		m_LobbyList->append_header("Cur", 50);
+		m_LobbyList->append_header("Max", 60);
 
 		m_btnEnterLobby = std::make_unique<button>((form&)*m_pForm, nana::rectangle(22, 490, 102, 23));
 		m_btnEnterLobby->caption("Enter Channel");
