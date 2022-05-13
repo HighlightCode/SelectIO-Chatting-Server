@@ -25,6 +25,7 @@
     </li>
     <li><a href="#Sample-Demo">SampleDemo</a></li>
     <li><a href="#TODO">TODO</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -56,10 +57,14 @@ Client <-> SELECT SERVER <-> Client
 1. Client uses Nana GUI to make ...
 
 ### Client UML
-<img src="images/Client.jpg" alt="Logo" align="center" width="600" height="350">
+<p align="center">
+<img src="images/Client.jpg" alt="Logo"width="600" height="350">
+</p>
 
 ### Client GUI
-<img src="images/ClientGUI.JPG" alt="Logo" align="center" width="600" height="350">
+<p align="center">
+<img src="images/ClientGUI.JPG" alt="Logo" width="600" height="350">
+</p>
 
 <p align="center">(<a href="#top">back to top</a>)</p>
 
@@ -80,3 +85,10 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <a href="mailto:sangin0829@gmail.com" target="_blank">
   <img src="https://img.shields.io/badge/Email-sangin0829%40gmail.com-yellow">
 </a>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* []()
+
+<p align="right">(<a href="#top">back to top</a>)</p>
