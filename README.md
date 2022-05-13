@@ -82,13 +82,17 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a href="mailto:sangin0829@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/Email-sangin0829%40gmail.com-yellow">
-</a>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 * []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<a href="mailto:sangin0829@gmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Email-sangin0829%40gmail.com-yellow">
+</a>
+<a href="https://guru.tistory.com/" target="_blank">
+  <img src="https://img.shields.io/badge/Blog-https%3A%2F%2Fguru.tistory.com-green">
+</a>
