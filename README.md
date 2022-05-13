@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/UnknownParty/SelectIO-Chatting-Server">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -56,10 +56,10 @@ Client <-> SELECT SERVER <-> Client
 1. Client uses Nana GUI to make ...
 
 ### Client UML
-<img src="images/Client.jpg" alt="Logo" width="600" height="350">
+<img src="images/Client.jpg" alt="Logo" align="center" width="600" height="350">
 
 ### Client GUI
-<img src="images/ClientGUI.jpg" alt="Logo" width="600" height="350">
+<img src="images/ClientGUI.JPG" alt="Logo" align="center" width="600" height="350">
 
 <p align="center">(<a href="#top">back to top</a>)</p>
 
