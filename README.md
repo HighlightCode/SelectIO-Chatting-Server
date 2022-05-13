@@ -66,7 +66,7 @@ Client <-> SELECT SERVER <-> Client
 <img src="images/ClientGUI.JPG" alt="Logo" width="600" height="350">
 </p>
 
-<p align="center">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- TODO -->
